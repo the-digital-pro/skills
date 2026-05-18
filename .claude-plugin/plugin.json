@@ -1,0 +1,6 @@
+{
+  "name": "tdp-skills",
+  "skills": [
+    "./skills/engineering/architecture-parse"
+  ]
+}
