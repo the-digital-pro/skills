@@ -54,8 +54,11 @@ open the project. Every project this skill emits must include it.
 8. **Serialise canonically** — exact key order per
    [REFERENCE.md#output-format](REFERENCE.md), 2-space indent, trailing
    newline.
-9. **Write the file** to the path the user asked for (or suggest
-   `public/projects/<id>.json` if they have the visualizer cloned).
+9. **Write the file** to the OS temporary directory as
+   `$TMPDIR/<id>.json` (falling back to `/tmp/<id>.json` if `$TMPDIR` is
+   unset). Never write it into the user's current workspace. Print the
+   absolute path so the consumer can drop it into `public/projects/` of
+   their visualizer or import it via **Import JSON**.
 10. **Suggest validation**: `npm run build` in the visualizer repo —
     structural errors fail the build; tier-2/3 issues surface in the
     editor's Validation panel.

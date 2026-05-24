@@ -5,6 +5,15 @@ tags ([`v0.2.0`](https://github.com/the-digital-pro/skills/releases/tag/v0.2.0),
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Changed
+- Output file is now written to the OS temporary directory
+  (`$TMPDIR/<id>.json`, falling back to `/tmp/<id>.json`) instead of the
+  user's current workspace. The skill prints the absolute path so the
+  consumer can move the file into `public/projects/` of their visualizer
+  or import it via **Import JSON**.
+
 ## [0.2.0] — 2026-05-22
 
 ### Added
